@@ -1,0 +1,27 @@
+FROM python:3.8-buster
+
+# Set working directory
+WORKDIR /usr/src/skule_vote
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Set time zone
+RUN cp /usr/share/zoneinfo/Canada/Eastern /etc/localtime \
+  && echo "America/Toronto" > /etc/timezone
+
+# Install dependencies
+RUN apt-get update && apt-get install -y postgresql-client
+
+RUN pip install --upgrade pip
+COPY hackathon_site/requirements.txt /usr/src/hackathon_site/requirements.txt
+RUN pip install -r /usr/src/hackathon_site/requirements.txt
+
+# Copy app
+COPY skule_vote/ /usr/src/skule_vote/
+
+# Copy entrypoint
+COPY deployment/entrypoint.sh /usr/src/entrypoint.sh
+RUN chmod +x /usr/src/entrypoint.sh
+ENTRYPOINT ["/usr/src/entrypoint.sh"]
