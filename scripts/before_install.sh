@@ -5,6 +5,7 @@ virtualenv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
 
+source /ENV_VARS
 python3 manage.py collectstatic
 
 cd frontend/ui
