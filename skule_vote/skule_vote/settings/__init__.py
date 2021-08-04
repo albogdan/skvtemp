@@ -33,9 +33,17 @@ UOFT_SECRET_KEY = os.environ.get("UOFT_SECRET_KEY", 0)
 if DEBUG:
     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
     INTERNAL_IPS = ["localhost", "127.0.0.1"]
+    CORS_ORIGIN_REGEX_WHITELIST = [
+        r"^https?://localhost:?\d*$", "*"
+    ]
 
 else:
-    ALLOWED_HOSTS = ["vote.skule.ca"]
+    ALLOWED_HOSTS = ["*"]
+    CORS_ORIGIN_REGEX_WHITELIST = [
+        r"^https://vote\.skule.ca:?\d*$", "*"
+    ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -56,6 +64,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
