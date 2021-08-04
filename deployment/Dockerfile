@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.9-buster
 
 # Set working directory
 WORKDIR /usr/src/skule_vote

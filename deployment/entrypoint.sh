@@ -8,4 +8,6 @@ done
 
 echo "Database connection made"
 
+python manage.py migrate
+
 exec "$@"
