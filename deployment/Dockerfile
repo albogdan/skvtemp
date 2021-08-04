@@ -15,8 +15,8 @@ RUN cp /usr/share/zoneinfo/Canada/Eastern /etc/localtime \
 RUN apt-get update && apt-get install -y postgresql-client
 
 RUN pip install --upgrade pip
-COPY hackathon_site/requirements.txt /usr/src/hackathon_site/requirements.txt
-RUN pip install -r /usr/src/hackathon_site/requirements.txt
+COPY skule_vote/requirements.txt /usr/src/skule_vote/requirements.txt
+RUN pip install -r /usr/src/skule_vote/requirements.txt
 
 # Copy app
 COPY skule_vote/ /usr/src/skule_vote/
