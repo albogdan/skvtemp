@@ -10,5 +10,11 @@ yarn in && yarn build
 sudo mv build/* /var/www/html/
 
 cd ../..
+
+echo "Location"
+pwd
+echo "Files"
+ls -la
+
 python manage.py collectstatic
 sudo mv static/* /var/www/html/static/
