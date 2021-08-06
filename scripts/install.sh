@@ -10,3 +10,9 @@ python3 manage.py collectstatic
 
 cd frontend/ui
 yarn in && yarn build
+
+cd ..
+cd ..
+sudo rm -r /var/www/html/*
+sudo mv frontend/ui/build/* /var/www/html/
+sudo mv static/* /var/www/html/static/
