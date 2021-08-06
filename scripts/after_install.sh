@@ -8,10 +8,10 @@ source venv/bin/activate
 echo "Installing requirements"
 pip3 install -r requirements.txt
 
-echo "Sourcing env vars"
+echo "Sourcing env vars /etc"
 #source /ENV_VARS
-
-echo "SECRET: $SECRET_KEY"
+source /etc/environment
+echo "SECRETKEYYY: $SECRET_KEY"
 echo "TEST: $DB_HOST"
 echo "Collecting static"
 python3 manage.py collectstatic
