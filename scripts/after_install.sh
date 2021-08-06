@@ -9,7 +9,8 @@ echo "Installing requirements"
 pip3 install -r requirements.txt
 
 echo "Sourcing env vars"
-source /ENV_VARS
+#source /ENV_VARS
+
 echo "SECRET: $SECRET_KEY"
 echo "TEST: $DB_HOST"
 echo "Collecting static"
