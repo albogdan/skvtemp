@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Stopping previous docker container"
 FOLDER=/home/ec2-user/skule-vote
 if [ -e "$FOLDER" ]; then
   cd $FOLDER
