@@ -7,8 +7,8 @@ printenv
 
 
 echo "Creating virtualenv"
-virtualenv venv
-source venv/bin/activate
+#virtualenv venv
+source ~/venv/bin/activate
 echo "Installing requirements"
 pip3 install -r requirements.txt
 
