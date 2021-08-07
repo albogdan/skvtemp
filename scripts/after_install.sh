@@ -8,9 +8,13 @@ source venv/bin/activate
 echo "Installing requirements"
 pip3 install -r requirements.txt
 
+echo "first printenv"
+printenv
 echo "Sourcing env vars /etc"
 #source /ENV_VARS
 source /etc/environment
+echo "second printenv"
+printenv
 echo "SECRETKEYYY: $SECRET_KEY"
 echo "TEST: $DB_HOST"
 echo "Collecting static"
