@@ -15,8 +15,8 @@ pip3 install -r requirements.txt
 echo "first printenv"
 printenv
 echo "Sourcing env vars /etc"
-#source /ENV_VARS
-source /etc/environment
+source /ENV_VARS
+#source /etc/environment
 echo "second printenv"
 printenv
 echo "SECRETKEYYY: $SECRET_KEY"
