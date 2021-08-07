@@ -2,6 +2,10 @@
 echo "Starting install"
 cd /home/ec2-user/skule-vote/skule_vote
 
+echo "printenv before venv"
+printenv
+
+
 echo "Creating virtualenv"
 virtualenv venv
 source venv/bin/activate
