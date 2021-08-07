@@ -2,25 +2,12 @@
 echo "Starting install"
 cd /home/ec2-user/skule-vote/skule_vote
 
-echo "printenv before venv"
-printenv
-
-
-echo "Creating virtualenv"
-#virtualenv venv
-#source /home/ec2-user/venv/bin/activate
 echo "Installing requirements"
 pip3 install -r requirements.txt
 
-echo "first printenv"
-printenv
-echo "Sourcing env vars /etc"
+echo "Sourcing env vars"
 source /ENV_VARS
-#source /etc/environment
-echo "second printenv"
-printenv
-echo "SECRETKEYYY: $SECRET_KEY"
-echo "TEST: $DB_HOST"
+
 echo "Collecting static"
 python3 manage.py collectstatic
 
@@ -28,8 +15,7 @@ cd frontend/ui
 echo "Yarn stuff"
 yarn in && yarn build
 
-cd ..
-cd ..
+cd ../..
 
 echo "Removing existing files"
 sudo rm -r /var/www/html/*
