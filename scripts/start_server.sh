@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Coping env vars"
+echo "Copying environment variables"
 cd /home/ec2-user/skule-vote
 cp /ENV_VARS /home/ec2-user/skule-vote/deployment
 
